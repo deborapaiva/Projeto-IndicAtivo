@@ -61,11 +61,12 @@ public class Ativos {
 
     @ManyToOne
     @JsonIgnoreProperties("ativos")
-    private UserLoginPJ userLoginPJ;
+    private ClientePJ userLoginPJ;
 
     @JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {
-        this.userLoginPJ = new UserLoginPJ(); userLoginPJ.setId(userLoginPJId);
+        this.userLoginPJ = new ClientePJ(); userLoginPJ.setId(userLoginPJId);
     }
+
     
     
 }

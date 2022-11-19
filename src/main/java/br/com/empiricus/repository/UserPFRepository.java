@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.empiricus.model.UserLoginPF;
+import br.com.empiricus.model.ClientePF;
 
 @Repository
-public interface UserPFRepository extends JpaRepository <UserLoginPF, Long>{
+public interface UserPFRepository extends JpaRepository <ClientePF, Long>{
 	
-	public Optional<UserLoginPF> findByCpf(String clientePF);
+	public Optional<ClientePF> findByCpf(String clientePF);
 
 }

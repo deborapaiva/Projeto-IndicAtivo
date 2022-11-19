@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.empiricus.model.UserLoginPJ;
+import br.com.empiricus.model.ClientePJ;
 import br.com.empiricus.repository.UserPJRepository;
 
 
@@ -28,15 +28,15 @@ public class UserPJService {
 	
 	
 	public interface UserrPJService {
-		UserLoginPJ saveUserPJ(UserLoginPJ userLoginPJ);//METODO  POST
-		List<UserLoginPJ> getAllUserPJ(); //METODO GET ALL (PESQUISA TODA TABELO)
-		UserLoginPJ getUserPJById(long id); //METODO GET POR ID
-		UserLoginPJ updateUserPJ(UserLoginPJ userLoginPJ, long id); //METODO PUT 
+		ClientePJ saveUserPJ(ClientePJ userLoginPJ);//METODO  POST
+		List<ClientePJ> getAllUserPJ(); //METODO GET ALL (PESQUISA TODA TABELO)
+		ClientePJ getUserPJById(long id); //METODO GET POR ID
+		ClientePJ updateUserPJ(ClientePJ userLoginPJ, long id); //METODO PUT 
 		void deleteUserPJ(long id); //METODO DELETE
 	}
 
 
-	public UserLoginPJ CadastrarUserPJ(UserLoginPJ userLoginPJ) {
+	public ClientePJ CadastrarUserPJ(ClientePJ userLoginPJ) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String senhaEncoder = encoder.encode(userLoginPJ.getSenha());
 		userLoginPJ.setSenha(senhaEncoder);
@@ -44,10 +44,10 @@ public class UserPJService {
 		return repository.save(userLoginPJ);
 	}
 
-	public Optional<UserLoginPJ> Logar(Optional<UserLoginPJ> user) {
+	public Optional<ClientePJ> Logar(Optional<ClientePJ> user) {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<UserLoginPJ> cnpj = repository.findByCnpj(user.get().getCnpj());
+		Optional<ClientePJ> cnpj = repository.findByCnpj(user.get().getCnpj());
 		
 		if (cnpj.isPresent()) {
 			

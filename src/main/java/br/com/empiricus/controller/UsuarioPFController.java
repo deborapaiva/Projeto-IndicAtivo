@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empiricus.model.UserLoginPF;
+import br.com.empiricus.model.ClientePF;
 import br.com.empiricus.service.UserPFService;
 import br.com.empiricus.service.UserPFService.UserrPFService;
 
@@ -32,7 +32,7 @@ public class UsuarioPFController {
 	private UserrPFService userrPFService;
 	
 	
-
+/*
 	@PostMapping("/logar/cpf")
 	public ResponseEntity<UserLoginPF> Autentication(@RequestBody Optional<UserLoginPF> user){
 		return userPFService.Logar(user)
@@ -40,39 +40,39 @@ public class UsuarioPFController {
 			.orElse(ResponseEntity
 				.status(HttpStatus.UNAUTHORIZED)
 				.build());
-	}
+	}*/
 
 	//--> Aqui adicionamos um Optional de usuarios que estava trazendo valores nulos
 	@PostMapping("/cadastrar/cpf")
-	public ResponseEntity<UserLoginPF> CadastrarUserPF(@RequestBody UserLoginPF userLoginPF) {
+	public ResponseEntity<ClientePF> CadastrarUserPF(@RequestBody ClientePF userLoginPF) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 			.body(userPFService.CadastrarUserPF(userLoginPF));
 	}	
 	
 	
 		@PostMapping()
-		public ResponseEntity<UserLoginPF> saveUser(@RequestBody UserLoginPF userLoginPF){
-			return new ResponseEntity<UserLoginPF>(userrPFService.saveUserPF(userLoginPF), HttpStatus.CREATED);
+		public ResponseEntity<ClientePF> saveUser(@RequestBody ClientePF userLoginPF){
+			return new ResponseEntity<ClientePF>(userrPFService.saveUserPF(userLoginPF), HttpStatus.CREATED);
 			
 		}
 		
 		
 		@GetMapping
-		public List<UserLoginPF> getAllUser(){
+		public List<ClientePF> getAllUser(){
 			return userrPFService.getAllUserPF();
 		}
 		
 		
 		@GetMapping("{id}")
-		public ResponseEntity<UserLoginPF> getUserById(@PathVariable("id") long clientePFid){
-			return new ResponseEntity<UserLoginPF>(userrPFService.getUserPFById(clientePFid), HttpStatus.OK);
+		public ResponseEntity<ClientePF> getUserById(@PathVariable("id") long clientePFid){
+			return new ResponseEntity<ClientePF>(userrPFService.getUserPFById(clientePFid), HttpStatus.OK);
 		}
 		
 		
 		@PutMapping("{id}")
-		public ResponseEntity<UserLoginPF> updateUserPF(@PathVariable("id") long id
-													,@RequestBody UserLoginPF userLoginPF){
-			return new ResponseEntity<UserLoginPF>(userrPFService.updateUserPF(userLoginPF, id), HttpStatus.OK);
+		public ResponseEntity<ClientePF> updateUserPF(@PathVariable("id") long id
+													,@RequestBody ClientePF userLoginPF){
+			return new ResponseEntity<ClientePF>(userrPFService.updateUserPF(userLoginPF, id), HttpStatus.OK);
 		}
 		
 		

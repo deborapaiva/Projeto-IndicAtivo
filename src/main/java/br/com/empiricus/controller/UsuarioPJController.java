@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.empiricus.model.UserLoginPJ;
+import br.com.empiricus.model.ClientePJ;
 import br.com.empiricus.service.UserPJService;
 import br.com.empiricus.service.UserPJService.UserrPJService;
 
@@ -31,6 +31,7 @@ public class UsuarioPJController {
 	@Autowired
 	private UserrPJService userrPJService;
 
+	/*
 	@PostMapping("/logar/cnpj")
 	public ResponseEntity<UserLoginPJ> Autentication(@RequestBody Optional<UserLoginPJ> user){
 		return userPJService.Logar(user)
@@ -38,37 +39,37 @@ public class UsuarioPJController {
 			.orElse(ResponseEntity
 				.status(HttpStatus.UNAUTHORIZED)
 				.build());
-	}
+	}*/
 
 	//--> Aqui adicionamos um Optional de usuarios que estava trazendo valores nulos
 	@PostMapping("/cadastrar/cnpj")
-	public ResponseEntity<UserLoginPJ> CadastroUserPJ(@RequestBody UserLoginPJ userLoginPJ) {
+	public ResponseEntity<ClientePJ> CadastroUserPJ(@RequestBody ClientePJ userLoginPJ) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 			.body(userPJService.CadastrarUserPJ(userLoginPJ));
 	}	
 	
 
 	@PostMapping()
-	public ResponseEntity<UserLoginPJ> saveUserPJ(@RequestBody UserLoginPJ userLoginPJ){
-		return new ResponseEntity<UserLoginPJ>(userrPJService.saveUserPJ(userLoginPJ), HttpStatus.CREATED);
+	public ResponseEntity<ClientePJ> saveUserPJ(@RequestBody ClientePJ userLoginPJ){
+		return new ResponseEntity<ClientePJ>(userrPJService.saveUserPJ(userLoginPJ), HttpStatus.CREATED);
 		
 	}
 
 	@GetMapping
-	public List<UserLoginPJ> getAllUserPJ(){
+	public List<ClientePJ> getAllUserPJ(){
 		return userrPJService.getAllUserPJ();
 	}
 	
 
 	@GetMapping("{id}")
-	public ResponseEntity<UserLoginPJ> getUserPJById(@PathVariable("id") long clientePJid){
-		return new ResponseEntity<UserLoginPJ>(userrPJService.getUserPJById(clientePJid), HttpStatus.OK);
+	public ResponseEntity<ClientePJ> getUserPJById(@PathVariable("id") long clientePJid){
+		return new ResponseEntity<ClientePJ>(userrPJService.getUserPJById(clientePJid), HttpStatus.OK);
 	}
 
 	@PutMapping("{id}")
-	public ResponseEntity<UserLoginPJ> updateUserPJ(@PathVariable("id") long id
-												,@RequestBody UserLoginPJ userLoginPJ){
-		return new ResponseEntity<UserLoginPJ>(userrPJService.updateUserPJ(userLoginPJ, id), HttpStatus.OK);
+	public ResponseEntity<ClientePJ> updateUserPJ(@PathVariable("id") long id
+												,@RequestBody ClientePJ userLoginPJ){
+		return new ResponseEntity<ClientePJ>(userrPJService.updateUserPJ(userLoginPJ, id), HttpStatus.OK);
 	}
 	
 

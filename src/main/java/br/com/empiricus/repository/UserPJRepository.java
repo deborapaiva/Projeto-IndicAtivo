@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.empiricus.model.UserLoginPJ;
+import br.com.empiricus.model.ClientePJ;
 
 @Repository
-public interface UserPJRepository extends JpaRepository <UserLoginPJ, Long>{
+public interface UserPJRepository extends JpaRepository <ClientePJ, Long>{
 	
-	public Optional<UserLoginPJ> findByCnpj(String clientePJ);
+	public Optional<ClientePJ> findByCnpj(String clientePJ);
 
 }

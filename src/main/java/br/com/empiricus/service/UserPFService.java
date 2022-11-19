@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import br.com.empiricus.model.UserLoginPF;
+import br.com.empiricus.model.ClientePF;
 import br.com.empiricus.repository.UserPFRepository;
 
 
@@ -28,14 +28,14 @@ public class UserPFService {
     EmailService emailService;
 	
 	public interface UserrPFService {
-	UserLoginPF saveUserPF(UserLoginPF userLoginPF);//METODO  POST
-	List<UserLoginPF> getAllUserPF(); //METODO GET ALL (PESQUISA TODA TABELO)
-	UserLoginPF getUserPFById(long id); //METODO GET POR ID
-	UserLoginPF updateUserPF(UserLoginPF userLoginPF, long id); //METODO PUT 
+	ClientePF saveUserPF(ClientePF userLoginPF);//METODO  POST
+	List<ClientePF> getAllUserPF(); //METODO GET ALL (PESQUISA TODA TABELO)
+	ClientePF getUserPFById(long id); //METODO GET POR ID
+	ClientePF updateUserPF(ClientePF userLoginPF, long id); //METODO PUT 
 	void deleteUserPF(long id); //METODO DELETE
 	}
 
-	public UserLoginPF CadastrarUserPF(UserLoginPF userLoginPF) {
+	public ClientePF CadastrarUserPF(ClientePF userLoginPF) {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		String senhaEncoder = encoder.encode(userLoginPF.getSenha());
 		userLoginPF.setSenha(senhaEncoder);
@@ -43,10 +43,10 @@ public class UserPFService {
 		return repository.save(userLoginPF);
 	}
 
-	public Optional<UserLoginPF> Logar(Optional<UserLoginPF> user) {
+	public Optional<ClientePF> Logar(Optional<ClientePF> user) {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<UserLoginPF> cpf = repository.findByCpf(user.get().getCpf());
+		Optional<ClientePF> cpf = repository.findByCpf(user.get().getCpf());
 		
 		if (cpf.isPresent()) {
 			
