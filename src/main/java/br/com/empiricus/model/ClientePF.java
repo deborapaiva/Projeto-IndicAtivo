@@ -46,7 +46,8 @@ public class ClientePF {
 	@NotNull
 	@Column(name = "telefone")
 	private String telefone;
-
+	
+	private String token;
 
 	public Long getId() {
 		return id;
@@ -103,5 +104,12 @@ public class ClientePF {
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
+	
+	public String getToken() {
+		return token;
+	}
 
+	public void setToken(String token) {
+		this.token = token;
+	}
 }
