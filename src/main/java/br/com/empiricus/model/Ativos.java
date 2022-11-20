@@ -64,9 +64,9 @@ public class Ativos {
   
 	private ClientePJ userLoginPJ;
 
-    @JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {
+    /*@JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {
         this.userLoginPJ = new ClientePJ(); userLoginPJ.setId(userLoginPJId);
-    }
+    }*/
 
 	public Long getId() {
 		return id;
