@@ -34,7 +34,7 @@ public class CadastroController {
 	}
 	
 	//PF	
-	@PostMapping("/cadastrar/cpf")
+	@PostMapping("/cpf")
 	public ResponseEntity<ClientePF> CadastrarUserPF(@RequestBody ClientePF userLoginPF) {
 		return ResponseEntity.status(HttpStatus.CREATED)
 			.body(userPFService.CadastrarUserPF(userLoginPF));
