@@ -63,7 +63,7 @@ public class Ativos {
 
     @ManyToOne
     @JsonIgnoreProperties("ativos")
-    @Schema(hidden = true)
+    @Schema(hidden = false)
   
 	private ClientePJ userLoginPJ;
 
