@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.empiricus.model.ClientePJ;
 import br.com.empiricus.service.UserPJService;
 import br.com.empiricus.service.UserPJService.UserrPJService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
 @RequestMapping("/usuarios/PJ")
+@SecurityRequirement(name = "Bearer Authentication") // Não deixar que alterem a informações sem autenticação
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioPJController {
 	

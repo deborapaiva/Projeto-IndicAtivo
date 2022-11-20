@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.empiricus.model.ClientePF;
 import br.com.empiricus.service.UserPFService;
 import br.com.empiricus.service.UserPFService.UserrPFService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
+@SecurityRequirement(name = "Bearer Authentication")
 @RequestMapping("/usuarios/PF")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioPFController {
