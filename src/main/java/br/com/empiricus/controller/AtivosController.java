@@ -1,6 +1,5 @@
 package br.com.empiricus.controller;
 
-
 import br.com.empiricus.model.Ativos;
 import br.com.empiricus.service.AtivosService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -14,6 +13,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,6 +27,9 @@ public class AtivosController {
     @Autowired
     private AtivosService ativosService;
 
+    public static String getUsername() {
+        return SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
+    }
 
     @GetMapping
     @Operation(
@@ -40,13 +43,14 @@ public class AtivosController {
     						)) }
     		)
     public List<Ativos> getAllAtivos(){
-        return ativosService.getAllAtivos();
+        String username = getUsername();
+        return ativosService.getAllAtivos(username);
     }
 
 
     @GetMapping("{id}")
     public ResponseEntity<Ativos> getAtivosById(@PathVariable long id){
-        return new ResponseEntity<Ativos>(ativosService.getAtivosById(id), HttpStatus.OK);
+        return new ResponseEntity<>(ativosService.getAtivosById(id), HttpStatus.OK);
     }
 
 
@@ -57,14 +61,14 @@ public class AtivosController {
 
     @PostMapping()
     public ResponseEntity<Ativos> saveAtivos(@RequestBody Ativos ativos){
-        return new ResponseEntity<Ativos>(ativosService.saveAtivos(ativos ), HttpStatus.CREATED);
-
+        String username = getUsername();
+        return new ResponseEntity<Ativos>(ativosService.saveAtivos(ativos, username), HttpStatus.CREATED);
     }
 
     @PutMapping("{nome}")
     public ResponseEntity<Ativos> updateAtivos(@PathVariable("nome") String nome
             ,@RequestBody Ativos ativos){
-        return new ResponseEntity<Ativos>(ativosService.updateAtivosByNome(ativos, nome), HttpStatus.OK);
+        return new ResponseEntity<>(ativosService.updateAtivosByNome(ativos, nome), HttpStatus.OK);
     }
 
 
@@ -74,6 +78,4 @@ public class AtivosController {
         ativosService.deleteAtivos(nome);
         return new ResponseEntity<String>("Ativos Deletados!.", HttpStatus.OK);
     }
-
-
 }

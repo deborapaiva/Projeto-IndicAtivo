@@ -1,7 +1,5 @@
 package br.com.empiricus.service;
 
-
-
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Optional;
@@ -13,8 +11,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.empiricus.model.ClientePJ;
 import br.com.empiricus.repository.UserPJRepository;
-
-
 
 
 @Service
