@@ -12,6 +12,7 @@ import br.com.empiricus.model.ClientePF;
 import br.com.empiricus.model.ClientePJ;
 import br.com.empiricus.service.UserPFService;
 import br.com.empiricus.service.UserPJService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 
 @RestController
 @RequestMapping("/cadastrar")

@@ -5,6 +5,8 @@ import java.util.List;
 
 import br.com.empiricus.model.Indicadores;
 import br.com.empiricus.service.IndicadoresService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping ("/Indicadores")
+@SecurityRequirement(name = "Bearer Authentication")
 public class IndicadoresController {
 
     @Autowired

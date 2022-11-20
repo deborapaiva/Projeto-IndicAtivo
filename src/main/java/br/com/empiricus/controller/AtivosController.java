@@ -5,6 +5,7 @@ import br.com.empiricus.model.Ativos;
 import br.com.empiricus.service.AtivosService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -20,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping ("/Ativos")
 @Tag(name = "Ativos", description = "Controller para requisições Ativos -> variáveis para cálculo")
+@SecurityRequirement(name = "Bearer Authentication")
 public class AtivosController {
 
     @Autowired
