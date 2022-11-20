@@ -127,8 +127,5 @@ public class Indicadores extends CalculaIndicadores {
 	public void setLpa(Double lpa) {
 		this.lpa = lpa;
 	}
-
-	
-
     
 }

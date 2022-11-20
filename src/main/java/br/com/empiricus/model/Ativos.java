@@ -13,10 +13,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Data
 @Table(name = "Ativos")
-@AllArgsConstructor
-@NoArgsConstructor
 public class Ativos {
 
 
@@ -223,8 +220,35 @@ public class Ativos {
 		this.userLoginPJ = userLoginPJ;
 	}
 
-	
+	public Ativos() {
+		
+	}
 
-    
+	public Ativos(@NotNull String nome, @NotNull Double lucroPorAcao, @NotNull Double dividaTotal,
+			@NotNull Double caixaEEquivalentes, @NotNull Double receitaLiquida, @NotNull Double lucroLiquido,
+			@NotNull Double lucroOperacionalLiquido, @NotNull Double acoesTotais, @NotNull Double cotacaoAcao,
+			@NotNull Double precoAcao, @NotNull Double valorPatrimonialPorAcao, @NotNull Double patrimonioLiquido,
+			@NotNull Double impostos, @NotNull Double juros, @NotNull Double depreciacao, @NotNull Double amortizacao,
+			@NotNull Double dividendo) {
+		super();
+		this.nome = nome;
+		this.lucroPorAcao = lucroPorAcao;
+		this.dividaTotal = dividaTotal;
+		this.caixaEEquivalentes = caixaEEquivalentes;
+		this.receitaLiquida = receitaLiquida;
+		this.lucroLiquido = lucroLiquido;
+		this.lucroOperacionalLiquido = lucroOperacionalLiquido;
+		this.acoesTotais = acoesTotais;
+		this.cotacaoAcao = cotacaoAcao;
+		this.precoAcao = precoAcao;
+		this.valorPatrimonialPorAcao = valorPatrimonialPorAcao;
+		this.patrimonioLiquido = patrimonioLiquido;
+		this.impostos = impostos;
+		this.juros = juros;
+		this.depreciacao = depreciacao;
+		this.amortizacao = amortizacao;
+		this.dividendo = dividendo;
+	}
+ 
     
 }
