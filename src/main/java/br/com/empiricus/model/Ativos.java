@@ -71,6 +71,160 @@ public class Ativos {
         this.userLoginPJ = new ClientePJ(); userLoginPJ.setId(userLoginPJId);
     }
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public Double getLucroPorAcao() {
+		return lucroPorAcao;
+	}
+
+	public void setLucroPorAcao(Double lucroPorAcao) {
+		this.lucroPorAcao = lucroPorAcao;
+	}
+
+	public Double getDividaTotal() {
+		return dividaTotal;
+	}
+
+	public void setDividaTotal(Double dividaTotal) {
+		this.dividaTotal = dividaTotal;
+	}
+
+	public Double getCaixaEEquivalentes() {
+		return caixaEEquivalentes;
+	}
+
+	public void setCaixaEEquivalentes(Double caixaEEquivalentes) {
+		this.caixaEEquivalentes = caixaEEquivalentes;
+	}
+
+	public Double getReceitaLiquida() {
+		return receitaLiquida;
+	}
+
+	public void setReceitaLiquida(Double receitaLiquida) {
+		this.receitaLiquida = receitaLiquida;
+	}
+
+	public Double getLucroLiquido() {
+		return lucroLiquido;
+	}
+
+	public void setLucroLiquido(Double lucroLiquido) {
+		this.lucroLiquido = lucroLiquido;
+	}
+
+	public Double getLucroOperacionalLiquido() {
+		return lucroOperacionalLiquido;
+	}
+
+	public void setLucroOperacionalLiquido(Double lucroOperacionalLiquido) {
+		this.lucroOperacionalLiquido = lucroOperacionalLiquido;
+	}
+
+	public Double getAcoesTotais() {
+		return acoesTotais;
+	}
+
+	public void setAcoesTotais(Double acoesTotais) {
+		this.acoesTotais = acoesTotais;
+	}
+
+	public Double getCotacaoAcao() {
+		return cotacaoAcao;
+	}
+
+	public void setCotacaoAcao(Double cotacaoAcao) {
+		this.cotacaoAcao = cotacaoAcao;
+	}
+
+	public Double getPrecoAcao() {
+		return precoAcao;
+	}
+
+	public void setPrecoAcao(Double precoAcao) {
+		this.precoAcao = precoAcao;
+	}
+
+	public Double getValorPatrimonialPorAcao() {
+		return valorPatrimonialPorAcao;
+	}
+
+	public void setValorPatrimonialPorAcao(Double valorPatrimonialPorAcao) {
+		this.valorPatrimonialPorAcao = valorPatrimonialPorAcao;
+	}
+
+	public Double getPatrimonioLiquido() {
+		return patrimonioLiquido;
+	}
+
+	public void setPatrimonioLiquido(Double patrimonioLiquido) {
+		this.patrimonioLiquido = patrimonioLiquido;
+	}
+
+	public Double getImpostos() {
+		return impostos;
+	}
+
+	public void setImpostos(Double impostos) {
+		this.impostos = impostos;
+	}
+
+	public Double getJuros() {
+		return juros;
+	}
+
+	public void setJuros(Double juros) {
+		this.juros = juros;
+	}
+
+	public Double getDepreciacao() {
+		return depreciacao;
+	}
+
+	public void setDepreciacao(Double depreciacao) {
+		this.depreciacao = depreciacao;
+	}
+
+	public Double getAmortizacao() {
+		return amortizacao;
+	}
+
+	public void setAmortizacao(Double amortizacao) {
+		this.amortizacao = amortizacao;
+	}
+
+	public Double getDividendo() {
+		return dividendo;
+	}
+
+	public void setDividendo(Double dividendo) {
+		this.dividendo = dividendo;
+	}
+
+	public ClientePJ getUserLoginPJ() {
+		return userLoginPJ;
+	}
+
+	public void setUserLoginPJ(ClientePJ userLoginPJ) {
+		this.userLoginPJ = userLoginPJ;
+	}
+
+	
+
     
     
 }
