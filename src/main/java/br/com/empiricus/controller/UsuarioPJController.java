@@ -26,35 +26,7 @@ import br.com.empiricus.service.UserPJService.UserrPJService;
 public class UsuarioPJController {
 	
 	@Autowired
-	private UserPJService userPJService;
-	
-	@Autowired
 	private UserrPJService userrPJService;
-
-	/*
-	@PostMapping("/logar/cnpj")
-	public ResponseEntity<UserLoginPJ> Autentication(@RequestBody Optional<UserLoginPJ> user){
-		return userPJService.Logar(user)
-			.map(resp -> ResponseEntity.ok(resp))
-			.orElse(ResponseEntity
-				.status(HttpStatus.UNAUTHORIZED)
-				.build());
-	}*/
-
-	//--> Aqui adicionamos um Optional de usuarios que estava trazendo valores nulos
-	@PostMapping("/cadastrar/cnpj")
-	public ResponseEntity<ClientePJ> CadastroUserPJ(@RequestBody ClientePJ userLoginPJ) {
-		return ResponseEntity.status(HttpStatus.CREATED)
-			.body(userPJService.CadastrarUserPJ(userLoginPJ));
-	}	
-	
-/*
-	@PostMapping()
-	public ResponseEntity<ClientePJ> saveUserPJ(@RequestBody ClientePJ userLoginPJ){
-		return new ResponseEntity<ClientePJ>(userrPJService.saveUserPJ(userLoginPJ), HttpStatus.CREATED);
-		
-	}
-*/
 
 	@GetMapping
 	public List<ClientePJ> getAllUserPJ(){

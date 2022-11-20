@@ -64,10 +64,10 @@ public class Ativos {
     @ManyToOne
     @JsonIgnoreProperties("ativos")
     @Schema(hidden = true)
-    private ClientePJ userLoginPJ;
+    private ClientePJ clientePJ;
 
-    @JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {
-        this.userLoginPJ = new ClientePJ(); userLoginPJ.setId(userLoginPJId);
+    @JsonProperty("clientePJ") private void unpackNested(Long clientePJId) {
+        this.clientePJ = new ClientePJ(); clientePJ.setId(clientePJId);
     }
 
     

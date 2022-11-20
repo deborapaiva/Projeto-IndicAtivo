@@ -25,37 +25,10 @@ import br.com.empiricus.service.UserPFService.UserrPFService;
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsuarioPFController {
 	
-	@Autowired
-	private UserPFService userPFService;
 	
 	@Autowired
 	private UserrPFService userrPFService;
-	
-	
-/*
-	@PostMapping("/logar/cpf")
-	public ResponseEntity<UserLoginPF> Autentication(@RequestBody Optional<UserLoginPF> user){
-		return userPFService.Logar(user)
-			.map(resp -> ResponseEntity.ok(resp))
-			.orElse(ResponseEntity
-				.status(HttpStatus.UNAUTHORIZED)
-				.build());
-	}*/
 
-	//--> Aqui adicionamos um Optional de usuarios que estava trazendo valores nulos
-	@PostMapping("/cadastrar/cpf")
-	public ResponseEntity<ClientePF> CadastrarUserPF(@RequestBody ClientePF userLoginPF) {
-		return ResponseEntity.status(HttpStatus.CREATED)
-			.body(userPFService.CadastrarUserPF(userLoginPF));
-	}	
-	
-	/*
-	 		@PostMapping()
-		public ResponseEntity<ClientePF> saveUser(@RequestBody ClientePF userLoginPF){
-			return new ResponseEntity<ClientePF>(userrPFService.saveUserPF(userLoginPF), HttpStatus.CREATED);
-			
-		}
-		*/
 		
 		@GetMapping
 		public List<ClientePF> getAllUser(){
