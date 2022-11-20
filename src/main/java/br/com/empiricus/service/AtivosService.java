@@ -7,12 +7,15 @@ import br.com.empiricus.repository.AtivosRepository;
 import br.com.empiricus.repository.IndicadoresRepository;
 import br.com.empiricus.repository.UserPJRepository;
 import br.com.empiricus.springboot.exception.ResourceNotFoundException;
+import lombok.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.List;
 
+@Data
 @Service
 @Transactional
 public class AtivosService {
