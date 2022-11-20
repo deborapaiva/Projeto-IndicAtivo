@@ -49,13 +49,13 @@ public class UsuarioPFController {
 			.body(userPFService.CadastrarUserPF(userLoginPF));
 	}	
 	
-	
-		@PostMapping()
+	/*
+	 		@PostMapping()
 		public ResponseEntity<ClientePF> saveUser(@RequestBody ClientePF userLoginPF){
 			return new ResponseEntity<ClientePF>(userrPFService.saveUserPF(userLoginPF), HttpStatus.CREATED);
 			
 		}
-		
+		*/
 		
 		@GetMapping
 		public List<ClientePF> getAllUser(){

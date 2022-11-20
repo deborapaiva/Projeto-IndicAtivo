@@ -3,6 +3,8 @@ package br.com.empiricus.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -61,6 +63,7 @@ public class Ativos {
 
     @ManyToOne
     @JsonIgnoreProperties("ativos")
+    @Schema(hidden = true)
     private ClientePJ userLoginPJ;
 
     @JsonProperty("userLoginPJ") private void unpackNested(Long userLoginPJId) {

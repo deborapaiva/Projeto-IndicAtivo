@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -46,9 +47,9 @@ public class ClientePJ {
 
 	@OneToMany(mappedBy = "userLoginPJ", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("userLoginPJ")
+	@Schema(hidden = true)
 	private List<Ativos> ativos;
 
-	private String token;
 
 	public Long getId() {
 		return id;
@@ -104,15 +105,6 @@ public class ClientePJ {
 
 	public void setAtivos(List<Ativos> ativos) {
 		this.ativos = ativos;
-	}
-
-	public String getToken() {
-		return token;
-	}
-
-	public void setToken(String token) {
-		this.token = token;
-	}
-	
+	}	
 	
 }

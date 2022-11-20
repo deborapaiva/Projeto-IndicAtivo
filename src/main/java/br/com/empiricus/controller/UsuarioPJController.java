@@ -48,12 +48,13 @@ public class UsuarioPJController {
 			.body(userPJService.CadastrarUserPJ(userLoginPJ));
 	}	
 	
-
+/*
 	@PostMapping()
 	public ResponseEntity<ClientePJ> saveUserPJ(@RequestBody ClientePJ userLoginPJ){
 		return new ResponseEntity<ClientePJ>(userrPJService.saveUserPJ(userLoginPJ), HttpStatus.CREATED);
 		
 	}
+*/
 
 	@GetMapping
 	public List<ClientePJ> getAllUserPJ(){
