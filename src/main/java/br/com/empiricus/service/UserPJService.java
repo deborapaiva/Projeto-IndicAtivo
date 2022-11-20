@@ -44,27 +44,4 @@ public class UserPJService {
 		return repository.save(userLoginPJ);
 	}
 
-	public Optional<ClientePJ> Logar(Optional<ClientePJ> user) {
-		
-		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-		Optional<ClientePJ> cnpj = repository.findByCnpj(user.get().getCnpj());
-		
-		if (cnpj.isPresent()) {
-			
-			if (encoder.matches(user.get().getSenha(), cnpj.get().getSenha())) {
-				
-				String auth = user.get().getCnpj() + ":" + user.get().getSenha();
-				
-				byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(Charset.forName("US-ASCII")));
-				
-				String authHeader = "Basic " + new String(encodedAuth);
-				
-				user.get().setToken(authHeader);
-				user.get().setNome(cnpj.get().getNome());
-
-				return user;
-			}
-		}
-		return null;
-	}
 }
